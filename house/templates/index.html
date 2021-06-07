@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container" >
-    <div class="text-white text-center" style="margin-top:15%">
-        <h1>Welcome to HoodWatch</h1>
-        <h5 style="margin-top:6%">Get Started by joining a hood today</h5>
-        <a href="{% url 'hood' %}" class="btn btn-sm btn-info mt-4">Join Hood</a>
+<div class="container bg-white rounded" style="opacity: 0.8; width: 800px;">
+    <div class="text-center text-dark" style="margin-top:17%">
+        <h1 >Welcome Dear Estemmed Customer </h1>
+        <h3 class="">When you’re moving to a new neighborhood, it’s important that you feel safe. Not only is neighborhood safety key for you and your loved ones, but it also helps the value of your home if you have plans to resell someday.
+
+You’ll want to eliminate any dangers before you commit to a lease or buying a home. Click the button below to register for a neighbourhood!</h3>
+        <a href="{% url 'hood' %}" class="btn col-6 mt-4 mb-4" style="background-color:#d8871d; font-size:25px;
+font-weight:bold;">Join Hood For Free</a>
     </div>
 
 </div>

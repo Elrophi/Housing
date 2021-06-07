@@ -1,29 +1,62 @@
-  <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-sm btn-info">
-                        <i class="fas fa-align-left"></i>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <img src="{static ''}" alt="">
+        <a class="navbar-brand" href="{% url 'index'%}">MY-HOOD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ">
+                {% if user.is_authenticated %}
+                <!-- <li class="nav-item active">
+                     <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" alt="">
+                    &nbsp; <span class="text-white">{{user.username|title}}</span>
+                </li> -->
+                <li class="nav-item">
+                    <a href="{% url 'profile' user.username %}">
+                        &nbsp; Profile
+                        <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" alt="">
+                        
+                    </a>
+        
+                </li>
+            
+                {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </l>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                </li>
+                {% endif %}
+                </ul>
+                <div >
+                <ul class="nav navbar-nav ">
+            {% if user.is_authenticated %}
+                
+                <li class="nav-item">
+                    <a href="{% url 'edit-profile' user.username %}">
+                        &nbsp; Edit Profile
+                        <!-- <i class="fas fa-edit"></i>&nbsp; -->
+                        
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="{% url 'hood' %}">
+                        &nbsp; Hoods
+                        <!-- <i class="fas fa-home"></i>&nbsp; -->
+                       
+                    </a>
+                </li>
+            </ul>
+            </div>
+            <div class="logout ml-2 mr-2 ">
+                <a href="{% url 'logout' %}" class="btn btn-sm btn-secondary d-block mx-auto"> Logout</a>
+            </div>
+        
+            {% endif%}
+        </div>
+    </div>
+</nav>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            {% if user.is_authenticated %}
-                            <li class="nav-item active">
-                                 <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" alt="">
-                                &nbsp; <span class="text-white">{{user.username|title}}</span>
-                            </li>
-                            {% else %}
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'login' %}">Log In</a>
-                            </li>
-
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
