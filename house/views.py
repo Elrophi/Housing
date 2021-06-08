@@ -4,7 +4,7 @@ from .forms import SignupForm, BusinessForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .models import NeighbourHood, Profile, Business, Post
-from .forms import UpdateProfileForm, NeighbourHoodForm, PostForm
+from .forms import UpdateProfileForm, NeighbourHoodForm, PostForm, BusinessForm
 from django.contrib.auth.models import User
 
 
@@ -93,6 +93,20 @@ def create_post(request, hood_id):
     else:
         form = PostForm()
     return render(request, 'post.html', {'form': form})
+
+def create_business(request, hood_id):
+    hood = NeighbourHood.objects.get(id=hood_id)
+    if request.method == 'POST':
+        form = BusinessForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.hood = hood
+            post.user = request.user.profile
+            post.save()
+            return redirect('single-hood', hood.id)
+    else:
+        form = BusinessForm()
+    return render(request, 'business.html', {'form': form})
 
 
 def join_hood(request, id):
