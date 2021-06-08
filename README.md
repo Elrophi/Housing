@@ -33,3 +33,5 @@
 ##  Setting up the virtual environment and activating it
     $ python -m venv <name of virtual environment>
     $ source <name of virtual environment>/bin/activate
+##  Install django and modules needed
+    $ pip install -r requirements.txt
