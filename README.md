@@ -40,4 +40,4 @@
 ### Contact: 0700 000 000
 
 ## Copyright and License
-[MIT License](https://github.com/Elrophi/Awards/blob/master/LICENSE)  
+[MIT License](https://github.com/Elrophi/Housing/blob/master/LICENSE)  
