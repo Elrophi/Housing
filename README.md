@@ -29,3 +29,7 @@
     $ git clone https://github.com/Elrophi/Awards.git
     $ cd gallery
     $ code .
+
+##  Setting up the virtual environment and activating it
+    $ python -m venv <name of virtual environment>
+    $ source <name of virtual environment>/bin/activate
