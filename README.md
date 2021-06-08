@@ -21,7 +21,7 @@
 [Neighbourhood site](https://www.figma.com/file/N1gnOOuQcgNQVJ8AyVaGwD/Neighbourhood?node-id=0%3A1)
 
 ## ER diagram
-[ER Diagram](https://embed.creately.com/pRaZrCrlXKt?token=UvZjffcASd3zjwVP&type=svg)
+[ER Diagram](https://github.com/Elrophi/Housing/blob/master/static/images/ERd.png)
 
 ## Installation and setup locally
 ## Pre-requisites
