@@ -35,3 +35,6 @@
     $ source <name of virtual environment>/bin/activate
 ##  Install django and modules needed
     $ pip install -r requirements.txt
+
+### Email: Elrophi@gmail.com
+### Contact: 0700 000 000
